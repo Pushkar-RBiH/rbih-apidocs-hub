@@ -1,0 +1,890 @@
+openapi: 3.0.0
+info:
+  title: DGV_1.3
+  version: 1.0.0
+  description: ''
+servers:
+  - url: '{{FARMER_MILK_INSIGHT_API_BASE_URL}}'
+  - url: localhost
+  - url: auth.nonprod.rbihub.io
+  - url: extgw.nonprod.rbihub.io
+paths:
+  /farmermilkinsights/states/1.3/en:
+    parameters: []
+    get:
+      summary: Get States
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: kartik_test
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: ZzlKOWVMQXBUYlN0T2E0MWU2eDF3MzFPTk5vYQ==
+          schema:
+            type: string
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: false
+          example: >-
+            Bearer
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJLYXJ0aWtlLkFudWoiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJuYmYiOjE3MTg4NjQ5MTEsImF6cCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE3MTg5MDgxMTEsImlhdCI6MTcxODg2NDkxMSwianRpIjoiMGMxY2YyMzktZjk4Zi00MDRjLThiMzYtYWU5ZmU3YjU2YjM1In0.EsX0B20hKoJWRFqIOoHJBpGkvq7Au19ldxAK9eDuQqOneW8TvgaPEU9eCtFJNnnytHDIR2qxej_p7W2n4LWepJz_iEriKwVyfobjqZdp6hflpmF1Ltb5zdDStEiJqRXlNqtXag3BGPqjuWmi-yeBXk_taxB3S_XGrkH2FHdwk_KvvFbyLlUU0pUF5jkEWQ3YGPQ8tpihGrPl2KzttVSuxKhJbnQ8bbfccBpyVvMm9M1-lmqhGGFVuxc2KCjQM3HPz3ECNRQ_dKCPCzK5LDdXryxxggOc3kpy8dQOfvHEqb67Aeqh5ZDtekgh_y6I5YPn-SDIWNDBO749kWOvQ7lCjA
+          schema:
+            type: string
+        - name: Cookie
+          in: header
+          required: false
+          example: '*=7dd2ed34a25982be09a090d177ffde9d7a6fdb8e'
+          schema:
+            type: string
+        - name: ts
+          in: header
+          required: false
+          example: '{{currentdate}}'
+          schema:
+            type: string
+        - name: txncode
+          in: header
+          required: false
+          example: txncode
+          schema:
+            type: string
+      responses: {}
+  /farmermilkinsights/federations/1.3/en:
+    parameters: []
+    post:
+      summary: Get Federations
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: kartik_test
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: ZzlKOWVMQXBUYlN0T2E0MWU2eDF3MzFPTk5vYQ==
+          schema:
+            type: string
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: false
+          example: >-
+            Bearer
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJLYXJ0aWtlLkFudWoiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJuYmYiOjE3MTg4NjQ5MTEsImF6cCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE3MTg5MDgxMTEsImlhdCI6MTcxODg2NDkxMSwianRpIjoiMGMxY2YyMzktZjk4Zi00MDRjLThiMzYtYWU5ZmU3YjU2YjM1In0.EsX0B20hKoJWRFqIOoHJBpGkvq7Au19ldxAK9eDuQqOneW8TvgaPEU9eCtFJNnnytHDIR2qxej_p7W2n4LWepJz_iEriKwVyfobjqZdp6hflpmF1Ltb5zdDStEiJqRXlNqtXag3BGPqjuWmi-yeBXk_taxB3S_XGrkH2FHdwk_KvvFbyLlUU0pUF5jkEWQ3YGPQ8tpihGrPl2KzttVSuxKhJbnQ8bbfccBpyVvMm9M1-lmqhGGFVuxc2KCjQM3HPz3ECNRQ_dKCPCzK5LDdXryxxggOc3kpy8dQOfvHEqb67Aeqh5ZDtekgh_y6I5YPn-SDIWNDBO749kWOvQ7lCjA
+          schema:
+            type: string
+        - name: Cookie
+          in: header
+          required: false
+          example: '*=7dd2ed34a25982be09a090d177ffde9d7a6fdb8e'
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+      responses: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    ts:
+                      type: string
+                    txncode:
+                      type: string
+                hmac:
+                  type: string
+                data:
+                  type: object
+                  properties:
+                    state-code:
+                      type: string
+  /farmermilkinsights/unions/1.3/en:
+    parameters: []
+    post:
+      summary: Get Unions
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: kartik_test
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: ZzlKOWVMQXBUYlN0T2E0MWU2eDF3MzFPTk5vYQ==
+          schema:
+            type: string
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: false
+          example: >-
+            Bearer
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJLYXJ0aWtlLkFudWoiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJuYmYiOjE3MTg4NjQ5MTEsImF6cCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE3MTg5MDgxMTEsImlhdCI6MTcxODg2NDkxMSwianRpIjoiMGMxY2YyMzktZjk4Zi00MDRjLThiMzYtYWU5ZmU3YjU2YjM1In0.EsX0B20hKoJWRFqIOoHJBpGkvq7Au19ldxAK9eDuQqOneW8TvgaPEU9eCtFJNnnytHDIR2qxej_p7W2n4LWepJz_iEriKwVyfobjqZdp6hflpmF1Ltb5zdDStEiJqRXlNqtXag3BGPqjuWmi-yeBXk_taxB3S_XGrkH2FHdwk_KvvFbyLlUU0pUF5jkEWQ3YGPQ8tpihGrPl2KzttVSuxKhJbnQ8bbfccBpyVvMm9M1-lmqhGGFVuxc2KCjQM3HPz3ECNRQ_dKCPCzK5LDdXryxxggOc3kpy8dQOfvHEqb67Aeqh5ZDtekgh_y6I5YPn-SDIWNDBO749kWOvQ7lCjA
+          schema:
+            type: string
+        - name: Cookie
+          in: header
+          required: false
+          example: '*=7dd2ed34a25982be09a090d177ffde9d7a6fdb8e'
+          schema:
+            type: string
+      responses: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    ts:
+                      type: string
+                    txncode:
+                      type: string
+                hmac:
+                  type: string
+                data:
+                  type: object
+                  properties:
+                    federation-code:
+                      type: string
+                    state-code:
+                      type: string
+  /farmermilkinsights/mcps/1.3/en:
+    parameters: []
+    post:
+      summary: Get Mcps
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: kartik_test
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: ZzlKOWVMQXBUYlN0T2E0MWU2eDF3MzFPTk5vYQ==
+          schema:
+            type: string
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: false
+          example: >-
+            Bearer
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJLYXJ0aWtlLkFudWoiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJuYmYiOjE3MTg4NjQ5MTEsImF6cCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE3MTg5MDgxMTEsImlhdCI6MTcxODg2NDkxMSwianRpIjoiMGMxY2YyMzktZjk4Zi00MDRjLThiMzYtYWU5ZmU3YjU2YjM1In0.EsX0B20hKoJWRFqIOoHJBpGkvq7Au19ldxAK9eDuQqOneW8TvgaPEU9eCtFJNnnytHDIR2qxej_p7W2n4LWepJz_iEriKwVyfobjqZdp6hflpmF1Ltb5zdDStEiJqRXlNqtXag3BGPqjuWmi-yeBXk_taxB3S_XGrkH2FHdwk_KvvFbyLlUU0pUF5jkEWQ3YGPQ8tpihGrPl2KzttVSuxKhJbnQ8bbfccBpyVvMm9M1-lmqhGGFVuxc2KCjQM3HPz3ECNRQ_dKCPCzK5LDdXryxxggOc3kpy8dQOfvHEqb67Aeqh5ZDtekgh_y6I5YPn-SDIWNDBO749kWOvQ7lCjA
+          schema:
+            type: string
+        - name: Cookie
+          in: header
+          required: false
+          example: '*=7dd2ed34a25982be09a090d177ffde9d7a6fdb8e'
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: false
+          schema:
+            type: string
+      responses: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    ts:
+                      type: string
+                    txncode:
+                      type: string
+                hmac:
+                  type: string
+                data:
+                  type: object
+                  properties:
+                    association-code:
+                      type: string
+  /consentformilkinsights/1.3/en:
+    parameters: []
+    get:
+      summary: Consent for Milk Insights
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: qwertyyuhgfdsazcvbnm4325
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: Q3BMaVZoel9FZ0VGQkF4eGFKZkh6aXVYZ01vYQ==
+          schema:
+            type: string
+        - name: txncode
+          in: header
+          required: false
+          example: mnbv
+          schema:
+            type: string
+        - name: provider
+          in: header
+          required: false
+          description: ' Provider -116 -workingfor DGV '
+          example: '116'
+          schema:
+            type: integer
+        - name: x-performance-test
+          in: header
+          required: false
+          example: 'false'
+          schema:
+            type: boolean
+        - name: ts
+          in: header
+          required: false
+          example: '{{currentdate}}'
+          schema:
+            type: string
+        - name: x-auth-token
+          in: header
+          required: false
+          example: >-
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJyYmloaW50YWRtaW4iLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJuYmYiOjE2ODQ5MDE2MjUsImF6cCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE2ODQ5NDQ4MjUsImlhdCI6MTY4NDkwMTYyNSwianRpIjoiNjJlMjAyZTktNDQzZC00ZmI1LTlhMDgtOGIxOTUzMmI1NjMwIn0.MPUaIGAWPhiefRHvyKtyuzbie3IVrM7XYOP57VeSv4nkdzCJGqo5RU0oJaApi2T2PiSauYfKPQlx50NCkd99l8CvltptyUtf8PrqHsaFZKiC6jeEKTfRuB9rDw329q1MNZoRedUiKVQcUcnN-MlfdwVq89OL-gc8-6CV6ArY-e4qNG9P8sEjHMdjkDwUq6C8Y_iyYcC1LHRVeoJ526s2zp9pZ1NIpdeHao8tDW9p2gM0JW2aQae1km8Umf94Luo7EZArhNOtJmW6FGVxc31-2Yb6F9lMC1UQic1UpITRPK8ZbMGKWbERY1zlcxxfc3CTaCpA_vT4ct4NauBYqEtO9A
+          schema:
+            type: string
+        - name: farmermobilenumber
+          in: header
+          required: false
+          example: '8104210817'
+          schema:
+            type: integer
+        - name: farmercode
+          in: header
+          required: false
+          description: '0046'
+          example: '0046'
+          schema:
+            type: integer
+        - name: dgvmcpcode
+          in: header
+          required: false
+          description: AMULKUTCH1057
+          example: AMULKUTCH1057
+          schema:
+            type: string
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: banktxncode
+          in: header
+          required: false
+          example: abc
+          schema:
+            type: string
+        - name: bankcode
+          in: header
+          required: false
+          example: FEDERAL
+          schema:
+            type: string
+      responses: {}
+  /farmermilkinsights/1.2/en:
+    parameters: []
+    get:
+      summary: Farmer Milk Insights
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: <api-key>
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: Q3BMaVZoel9FZ0VGQkF4eGFKZkh6aXVYZ01vYQ==
+          schema:
+            type: string
+        - name: txncode
+          in: header
+          required: false
+          example: 94j6d8
+          schema:
+            type: integer
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-performance-test
+          in: header
+          required: false
+          example: 'false'
+          schema:
+            type: boolean
+        - name: ts
+          in: header
+          required: false
+          example: '{{currentdate}}'
+          schema:
+            type: string
+        - name: x-auth-token
+          in: header
+          required: false
+          example: >-
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJyYmloaW50YWRtaW4iLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJuYmYiOjE2ODQ5MDE2MjUsImF6cCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE2ODQ5NDQ4MjUsImlhdCI6MTY4NDkwMTYyNSwianRpIjoiNjJlMjAyZTktNDQzZC00ZmI1LTlhMDgtOGIxOTUzMmI1NjMwIn0.MPUaIGAWPhiefRHvyKtyuzbie3IVrM7XYOP57VeSv4nkdzCJGqo5RU0oJaApi2T2PiSauYfKPQlx50NCkd99l8CvltptyUtf8PrqHsaFZKiC6jeEKTfRuB9rDw329q1MNZoRedUiKVQcUcnN-MlfdwVq89OL-gc8-6CV6ArY-e4qNG9P8sEjHMdjkDwUq6C8Y_iyYcC1LHRVeoJ526s2zp9pZ1NIpdeHao8tDW9p2gM0JW2aQae1km8Umf94Luo7EZArhNOtJmW6FGVxc31-2Yb6F9lMC1UQic1UpITRPK8ZbMGKWbERY1zlcxxfc3CTaCpA_vT4ct4NauBYqEtO9A
+          schema:
+            type: string
+        - name: farmermobilenumber
+          in: header
+          required: false
+          example: '8104210817'
+          schema:
+            type: integer
+        - name: farmercode
+          in: header
+          required: false
+          description: '0046'
+          example: '0046'
+          schema:
+            type: integer
+        - name: dgvmcpcode
+          in: header
+          required: false
+          description: AMULKUTCH1057
+          example: AMULKUTCH1057
+          schema:
+            type: string
+        - name: consentotp
+          in: header
+          required: false
+          example: '123456'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: bankcode
+          in: header
+          required: false
+          example: FEDERAL
+          schema:
+            type: string
+        - name: banktxncode
+          in: header
+          required: false
+          example: abc
+          schema:
+            type: string
+        - name: dgvtxncode
+          in: header
+          required: false
+          example: DGVRBIH2409051104480623
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+      responses: {}
+  /farmermilkinsights/pdf/1.3/en:
+    parameters: []
+    get:
+      summary: Farmer Milk Insights PDF
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: <api-key>
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: Q3BMaVZoel9FZ0VGQkF4eGFKZkh6aXVYZ01vYQ==
+          schema:
+            type: string
+        - name: txncode
+          in: header
+          required: false
+          example: 94j6d8
+          schema:
+            type: integer
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-performance-test
+          in: header
+          required: false
+          example: 'false'
+          schema:
+            type: boolean
+        - name: ts
+          in: header
+          required: false
+          example: '{{currentdate}}'
+          schema:
+            type: string
+        - name: x-auth-token
+          in: header
+          required: false
+          example: >-
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJyYmloaW50YWRtaW4iLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJuYmYiOjE2ODQ5MDE2MjUsImF6cCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE2ODQ5NDQ4MjUsImlhdCI6MTY4NDkwMTYyNSwianRpIjoiNjJlMjAyZTktNDQzZC00ZmI1LTlhMDgtOGIxOTUzMmI1NjMwIn0.MPUaIGAWPhiefRHvyKtyuzbie3IVrM7XYOP57VeSv4nkdzCJGqo5RU0oJaApi2T2PiSauYfKPQlx50NCkd99l8CvltptyUtf8PrqHsaFZKiC6jeEKTfRuB9rDw329q1MNZoRedUiKVQcUcnN-MlfdwVq89OL-gc8-6CV6ArY-e4qNG9P8sEjHMdjkDwUq6C8Y_iyYcC1LHRVeoJ526s2zp9pZ1NIpdeHao8tDW9p2gM0JW2aQae1km8Umf94Luo7EZArhNOtJmW6FGVxc31-2Yb6F9lMC1UQic1UpITRPK8ZbMGKWbERY1zlcxxfc3CTaCpA_vT4ct4NauBYqEtO9A
+          schema:
+            type: string
+        - name: farmermobilenumber
+          in: header
+          required: false
+          example: '8104210817'
+          schema:
+            type: integer
+        - name: farmercode
+          in: header
+          required: false
+          description: '0046'
+          example: '0046'
+          schema:
+            type: integer
+        - name: dgvmcpcode
+          in: header
+          required: false
+          description: AMULKUTCH1057
+          example: AMULKUTCH1057
+          schema:
+            type: string
+        - name: consentotp
+          in: header
+          required: false
+          example: '123456'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: bankcode
+          in: header
+          required: false
+          example: FEDERAL
+          schema:
+            type: string
+        - name: banktxncode
+          in: header
+          required: false
+          example: abc
+          schema:
+            type: string
+        - name: dgvtxncode
+          in: header
+          required: false
+          example: DGVRBIH2409051104480623
+          schema:
+            type: string
+      responses: {}
+  /farmermilkinsights/1.1/en:
+    parameters: []
+    get:
+      summary: Farmer Milk Insights 0 1
+      parameters:
+        - name: api-key
+          in: header
+          required: false
+          example: <api-key>
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: Q3BMaVZoel9FZ0VGQkF4eGFKZkh6aXVYZ01vYQ==
+          schema:
+            type: string
+        - name: txncode
+          in: header
+          required: false
+          example: 94j6d8
+          schema:
+            type: integer
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-performance-test
+          in: header
+          required: false
+          example: 'false'
+          schema:
+            type: boolean
+        - name: ts
+          in: header
+          required: false
+          example: '{{currentdate}}'
+          schema:
+            type: string
+        - name: x-auth-token
+          in: header
+          required: false
+          example: >-
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJyYmloaW50YWRtaW4iLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJuYmYiOjE2ODQ5MDE2MjUsImF6cCI6ImtVU292U1lwZUludUtfRUluM0hJTDFfWl9Sa2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE2ODQ5NDQ4MjUsImlhdCI6MTY4NDkwMTYyNSwianRpIjoiNjJlMjAyZTktNDQzZC00ZmI1LTlhMDgtOGIxOTUzMmI1NjMwIn0.MPUaIGAWPhiefRHvyKtyuzbie3IVrM7XYOP57VeSv4nkdzCJGqo5RU0oJaApi2T2PiSauYfKPQlx50NCkd99l8CvltptyUtf8PrqHsaFZKiC6jeEKTfRuB9rDw329q1MNZoRedUiKVQcUcnN-MlfdwVq89OL-gc8-6CV6ArY-e4qNG9P8sEjHMdjkDwUq6C8Y_iyYcC1LHRVeoJ526s2zp9pZ1NIpdeHao8tDW9p2gM0JW2aQae1km8Umf94Luo7EZArhNOtJmW6FGVxc31-2Yb6F9lMC1UQic1UpITRPK8ZbMGKWbERY1zlcxxfc3CTaCpA_vT4ct4NauBYqEtO9A
+          schema:
+            type: string
+        - name: farmermobilenumber
+          in: header
+          required: false
+          example: '8104210817'
+          schema:
+            type: integer
+        - name: farmercode
+          in: header
+          required: false
+          description: '0046'
+          example: '0046'
+          schema:
+            type: integer
+        - name: dgvmcpcode
+          in: header
+          required: false
+          description: AMULKUTCH1057
+          example: AMULKUTCH1057
+          schema:
+            type: string
+        - name: consentotp
+          in: header
+          required: false
+          example: '123456'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: bankcode
+          in: header
+          required: false
+          example: FEDERAL
+          schema:
+            type: string
+        - name: banktxncode
+          in: header
+          required: false
+          example: F2405211720076925
+          schema:
+            type: string
+        - name: dgvtxncode
+          in: header
+          required: false
+          example: DGVRBIH2407041238444119
+          schema:
+            type: string
+      responses: {}
+  /land-owner-details/1.5/en:
+    parameters: []
+    get:
+      summary: http://localhost:8089/land-owner-details/1.5/en
+      parameters:
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: ZDhOYnUzbFNCVDFmYkRLOGIyamh0VUdrSnJVYQ==
+          schema:
+            type: string
+        - name: consent-id
+          in: header
+          required: false
+          example: '3123123'
+          schema:
+            type: integer
+        - name: txncode
+          in: header
+          required: false
+          example: '12345678'
+          schema:
+            type: integer
+        - name: ts
+          in: header
+          required: false
+          example: '{{currentdate}}'
+          schema:
+            type: string
+        - name: provider
+          in: header
+          required: false
+          example: '28'
+          schema:
+            type: integer
+        - name: surveynum
+          in: header
+          required: false
+          example: MTk0LzHgsJAvMlx0XHRcdFx0
+          schema:
+            type: string
+        - name: scope
+          in: header
+          required: false
+          example: '1'
+          schema:
+            type: integer
+        - name: Villageid
+          in: header
+          required: false
+          example: NTk2MjE4
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: false
+          example: Basic YWRtaW46cGFzcw==
+          schema:
+            type: string
+      responses: {}
+  /authentication/oauth2/1.2/token:
+    parameters: []
+    post:
+      summary: https://auth.nonprod.rbihub.io/authentication/oauth2/1.2/token
+      parameters:
+        - name: client-id
+          in: header
+          required: false
+          example: XPJlE8GMiPwB5caJeJnpXT482UjnY0TkC3yv/HM/A9eGQ1m8L+mJCz2MbSU=
+          schema:
+            type: string
+        - name: client-secret
+          in: header
+          required: false
+          example: WeMDHf+TuNohn8iWapHAKG5b4D/gCTqAPju//D46iBV6ldTiGoF/AgWmlyE=
+          schema:
+            type: string
+        - name: session-id
+          in: header
+          required: false
+          example: >-
+            yE85EUErrJt7nDP1alMcOSSYQCA1Whs8ezcpqVjkVwMvq0HFgXvyYUZSZ1ypp5LxjgtkXLILqVFkURxZcy29N/5vByxVZXlLBYt/ExiY0fDBvZ/E4wiLRf3PNMaE2lxbFPYYgvQL6KymNAny6NUHeqrulA/jiCPA0oTOWY80VndK1LVwTP5Axd1E+/3A1QCD/VyY/62pQ8khzTpcD6Y603OE0WFXflKEukITUxz8nPkpluuhuytiRCQ4EpgZ28hXG6eHFgR16nDBS0QgaLIRQe48SxC6ZXUf7EV6J7uLrPSQNRtSg6b9g7BtCrRafaMoPY6HamiohxBChjtp2NHZDQ==
+          schema:
+            type: string
+        - name: session-key
+          in: header
+          required: false
+          example: >-
+            KB+QlzbReK0Bz76uSmTsYgB4kF39fMbSoYA4hSo6kq5Q+9xui+2AWgQouy6H/55IWkLoceEhDlL1H+uALUwsDsbnFHGvqGKePfhfQA3dcM7h1eeNFHt09C5M04NNe++nlpQIdeqFX/TQUoYv9/StWfSMGh53S2dLfukjR9S1Laj3+roKqMHIuKh7FchURl9U2jWuIdo0QZkNruxansNKprxortnMarTWbTVgosUy1fdDl1Q26tu8DczK+JJaW+3/xTGBHzRsZmAICMoR2mYqJqWNfGqf74NKUMJk2pZQXTkQpTVXOEYGrS+yuFBKfss1VZnvSYJsmPIiEdiwY/74EQ==
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+      responses: {}
+  /dgv/farmermilkinsights/federations/1.3/en:
+    parameters: []
+    post:
+      summary: >-
+        https://extgw.nonprod.rbihub.io/dgv/farmermilkinsights/federations/1.3/en
+      parameters:
+        - name: Accept
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          required: false
+          example: d1I1c3NWbmFKM1B6X2lXTnRscFhEM2NxcmRZYQ==
+          schema:
+            type: string
+        - name: provider
+          in: header
+          required: false
+          example: '116'
+          schema:
+            type: integer
+        - name: x-env-route
+          in: header
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: false
+          example: >-
+            Bearer
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJWaW5vdGguQ2hvdWRocmkiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6IndSNXNzVm5hSjNQel9pV050bHBYRDNjcXJkWWEiLCJuYmYiOjE3MzYxNTI5MjQsImF6cCI6IndSNXNzVm5hSjNQel9pV050bHBYRDNjcXJkWWEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE3MzYxOTYxMjQsImlhdCI6MTczNjE1MjkyNCwianRpIjoiNmU2M2I3OGQtODIyYS00NDkwLTgyODUtOWQ4Zjk4YTgwODUzIn0.nmM1fnpVjYKD3I9_rRKzb91wGmqVhpQ4xVCRLwYjUt1dAVDG9xwR5PwYyjKfCEIJ6oZAGf4jatALKI0JvpG98YwH-2QGtkLZXGcb-AARzFh04Z7qNleHN7iJ-UBkwumXJQmQ4nLEKM1B4cuA2EZLUffVqs4RTkaIui5O2S4UvNB6MAjS1ienIuVs7rTynwqO9z7Y6hDKXgmwtWCshyhneN8kzyKpQwADhX4MXRo2cq73nS_Eat0YGM3OwqZGax4incWxxqxDaKtlYEPb2e76I7OChADFNMUUOx2zlx6_1a5z3M4cIgPlIr1VqNPRc7g9Rn9Fvc_J1FVDLPOk5DcmJg
+          schema:
+            type: string
+      responses: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    state-code:
+                      type: string
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    txncode:
+                      type: string
+                    ts:
+                      type: string
+                      format: style
+                hmac:
+                  type: string
+
