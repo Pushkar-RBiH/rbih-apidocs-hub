@@ -182,7 +182,6 @@ const config: Config = {
         },
         {
           title: 'About Us',
-          position:'right',
           items: [
             {
               label: 'Who we are',
