@@ -87,6 +87,7 @@ const config: Config = {
           farmermilkinsights: {
             specPath: "examples/farmer-milk-insights.yaml",
             outputDir: "docs/Farmer-Milk-Insights",
+            hideSendButton: true,
             sidebarOptions: {
               groupPathsBy: "tag",
             },
@@ -108,13 +109,15 @@ const config: Config = {
           IBDIC: {
             specPath: "examples/ibdic.yaml",
             outputDir: "docs/Ibdic",
+            hideSendButton:true,
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           LRS: {
-            specPath: "examples/lrs.yaml",
+            specPath: "multiple_states/LRS",
             outputDir: "docs/lrs",
+            hideSendButton:true,
             sidebarOptions: {
               groupPathsBy: "tag",
             },
@@ -129,6 +132,7 @@ const config: Config = {
           Satsure: {
             specPath: "examples/satsure.yaml",
             outputDir: "docs/satsure",
+            hideSendButton: true,
             sidebarOptions: {
               groupPathsBy: "tag",
             },

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# RBIH API Documentation
+# RBIH API Specifications
 
 Welcome to the RBIH API Documentation.
 
