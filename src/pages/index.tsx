@@ -13,16 +13,33 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
+        {/* Background illustration */}
+        <div className={styles.heroBackground}>
+          <img 
+            src="img/innovation-banner.png" 
+            alt="RBIH Developer Portal - Technology and Innovation" 
+            className={styles.heroBackgroundImage}
+          />
+        </div>
+        
+        {/* Content overlay */}
+        <div className={styles.heroContent}>
+          <Heading as="h1" className="hero__title">
+            {siteConfig.title}
+          </Heading>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles.buttons}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/intro">
+              Get Started
+            </Link>
+            <Link
+              className="button button--outline button--lg"
+              to="/docs/api">
+              API Reference
+            </Link>
+          </div>
         </div>
       </div>
     </header>

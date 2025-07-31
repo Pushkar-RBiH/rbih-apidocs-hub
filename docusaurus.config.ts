@@ -6,9 +6,9 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'RBIH Developer Portal',
+  tagline: 'Frictionless Finance for a Billion Indians™',
+  favicon: 'img/rbih-logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -86,12 +86,60 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
           farmermilkinsights: {
             specPath: "examples/farmer-milk-insights.yaml",
-            outputDir: "docs/farmer-milk-insights",
+            outputDir: "docs/Farmer-Milk-Insights",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
-
+          digilocker_dog: {
+            specPath: "examples/digilocker_dog.yaml",
+            outputDir: "docs/Digilocker",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          GSTN_TOPIC: {
+            specPath: "examples/gstn-service.yaml",
+            outputDir: "docs/Gstn-service",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          IBDIC: {
+            specPath: "examples/ibdic.yaml",
+            outputDir: "docs/Ibdic",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          LRS: {
+            specPath: "examples/lrs.yaml",
+            outputDir: "docs/lrs",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          IDFY: {
+            specPath: "examples/idfy.yaml",
+            outputDir: "docs/idfy",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          Satsure: {
+            specPath: "examples/satsure.yaml",
+            outputDir: "docs/satsure",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          Think360: {
+            specPath: "examples/think360.yaml",
+            outputDir: "docs/think360",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
         }
       },
     ]
@@ -101,19 +149,19 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Developer Portal',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/rbih-logo.svg',
       },
-      items: [
+      items: [//items List on top
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'API Specs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/folder', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -121,7 +169,7 @@ const config: Config = {
         },
       ],
     },
-    footer: {
+    footer: {// bottom layout
       style: 'dark',
       links: [
         {
@@ -134,19 +182,19 @@ const config: Config = {
           ],
         },
         {
-          title: 'Community',
+          title: 'About Us',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Who we are',
+              href: 'https://rbihub.in/who-we-are/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Our Team',
+              href: 'https://rbihub.in/our-rbih-team/',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Careers',
+              href: 'https://rbihub.in/careers/',
             },
           ],
         },
@@ -155,7 +203,7 @@ const config: Config = {
           items: [
             {
               label: 'Blog',
-              to: '/blog',
+              to: '/folder',
             },
             {
               label: 'GitHub',
