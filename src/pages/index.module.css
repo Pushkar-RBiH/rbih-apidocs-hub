@@ -1,17 +1,16 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
- .heroBanner {
+.heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   min-height: 70vh;
-  /* Change background color here */
+
+  /* ✅ OLD:
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  /* Or use a solid color: background-color: #your-color; */
+  */
+
+  /* ✅ NEW: Use solid dark background instead of gradient */
+  background-color: #0d0d0d;
 }
 
 @media screen and (max-width: 996px) {
@@ -28,43 +27,70 @@
   margin-top: 2rem;
 }
 
-/* Hero background and overlay styles */
+/* ✅ OVERLAY BACKGROUND IMAGE - keep as is unless replacing image */
 .heroBackground {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%); /* ✅ Center horizontally */
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  opacity: 0.3;
+  opacity: 0.2; /* slightly faded, tweak as needed */
+  pointer-events: none;
 }
 
 .heroBackgroundImage {
-  width: 80%;
-  max-width: 800px;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
 }
 
+
+/* ✅ CENTERED HERO BOX (update colors to match new theme) */
 .heroContent {
   position: relative;
   z-index: 2;
-  /* Change overlay box color here */
-  background: rgba(255, 255, 255, 0.95);
-  /* For a darker box, use: background: rgba(0, 0, 0, 0.8); */
-  /* For colored box, use: background: rgba(74, 144, 226, 0.9); */
+
+  /* 🔁 Use theme-aware CSS variables */
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color);
+
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 3rem 2rem;
   margin: 2rem auto;
   max-width: 600px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  /* Change text color if needed */
-  color: #333;
-  /* For white text on dark background: color: #fff; */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* lighter shadow for better contrast in light mode */
+}
+
+
+/* ✅ Make buttons match purple theme */
+.buttons a.button--primary {
+  background-color: #9DB2FF;
+  color: black;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.buttons a.button--primary:hover {
+  background-color: #B5C5FF;
+}
+
+.buttons a.button--secondary {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.buttons a.button--secondary:hover {
+  background-color: #f0f0f0;
 }
 
 /* Responsive design for mobile */
@@ -73,7 +99,7 @@
     max-width: 100%;
     margin: 0 1rem;
   }
-  
+
   .buttons {
     flex-direction: column;
     gap: 0.5rem;
