@@ -1,0 +1,448 @@
+openapi: 3.0.1
+info:
+  title: Think360
+  description: ''
+  version: 1.0.0
+tags: []
+paths:
+  /qa/kwikid/aadhar-redact/1.0/en:
+    post:
+      summary: Aadhar-redact
+      deprecated: false
+      tags: []
+      parameters:
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          example: application/json
+          schema:
+            type: string
+        - name: provider
+          in: header
+          description: ''
+          required: true
+          example: '1322345678'
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          description: Q3BMaVZoel9FZ0VGQkF4eGFKZkh6aXVYZ01vYQ==
+          required: true
+          example: Q3BMaVZoel9FZ0VGQkF4eGFKZkh6aXVYZ01vYQ==
+          schema:
+            type: string
+        - name: x-kwikid-key
+          in: header
+          description: '323309374506270722'
+          required: true
+          example: '323309374506270722'
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: ''
+          required: true
+          example: >-
+            Bearer
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJCaGFrdGkuS2FoYW5kYWwiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6IkNZYUxtRENiS0JrRHRlYTRaTEYxeTFvbW80UWEiLCJuYmYiOjE3NTIyMjM2OTUsImF6cCI6IkNZYUxtRENiS0JrRHRlYTRaTEYxeTFvbW80UWEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE3NTIyNjY4OTUsImlhdCI6MTc1MjIyMzY5NSwianRpIjoiMzYxYmE0ZDQtMjVjNy00Y2YzLWE1MzAtMDFkNjhmNTQ3YzIzIn0.I7WwTgzRmt01hpNcEFcMGNERVtqXcowjfJU_aCF2SlC30YT47IZ8iEauEw4iL2oIi87ArCGanrxi8lSE-wL-RqWHEfuDADQyBPUXx9Dc2rycW86Q_GCY1cm2gTUYpNbFyPbiYWauJXBxsOn6lkwbGl9TKnPlVC0LiQ6MQf4YCYF0EdmRjWg4fcG27avSnTMF1NdXv_nbvXgOcKB5WIAUfIDDqUiORDTS-8nijvPsXFjxe0c__SSey79D1WXpTWAG33Bd1T0NzR05tE76Z-89YFEZE3GdcYpbNwrMz0j0K_G4oXCCeL3rerQMr8OSCq-pQaDZrCpwurTbeWyjfdZoWg
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    txncode:
+                      type: string
+                    ts:
+                      type: string
+                  required:
+                    - ver
+                    - txncode
+                    - ts
+                data:
+                  type: object
+                  properties:
+                    uniqueId:
+                      type: string
+                    imageBase64:
+                      type: string
+                  required:
+                    - uniqueId
+                    - imageBase64
+                hmac:
+                  type: string
+              required:
+                - meta
+                - data
+                - hmac
+      responses:
+        '200':
+          description: ''
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      errcode:
+                        type: string
+                      status:
+                        type: string
+                      info:
+                        type: string
+                    required:
+                      - errcode
+                      - status
+                      - info
+                  data:
+                    type: object
+                    properties: {}
+                  signature:
+                    type: string
+                  meta:
+                    type: object
+                    properties:
+                      txncode:
+                        type: string
+                      ver:
+                        type: string
+                      ts:
+                        type: string
+                    required:
+                      - txncode
+                      - ver
+                      - ts
+                  hmac:
+                    type: string
+                  publickey:
+                    type: string
+                  sig-algo:
+                    type: string
+                required:
+                  - result
+                  - data
+                  - signature
+                  - meta
+                  - hmac
+                  - publickey
+                  - sig-algo
+              example: >-
+                {"result":{"errcode":"E043","status":"failed","info":"cannot
+                unpack non-iterable NoneType
+                object"},"data":{},"signature":"MGUCMQCn5HbV0ORQJ9M4qyX0AexFgzx7om9FUtXohzyLmFEzZgc6/veK9r5PnhAM8jsYD9ACMFsQYka8dYypNGpNrDnGvu3JHb50Dz13VLgEi2QnLcJsJ3zZLwbcQNKlgtpcntzxHw==","meta":{"txncode":"Rakhi123","ver":"1.0","ts":"2025-07-31T16:47:30+0530"},"hmac":"WKljGvYklRgU3reW7KNmUGa2W55zRF/8b/bnw/JWYo4=","publickey":"MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEKulxpinET1WoqVhiCpEQCNQQBtMRgVvjnvxfTINwr1ST7s+KoJuEp/ciPAnYZHZ5soGMZtLBZRRhEJnvvhlXClUiojiwLnpE0jxBhrLO+5wwUTRLFHLpsoA45/p5B0Hz","sig-algo":"SHA256withECDSA"}
+          headers: {}
+        x-200:Error:
+          description: ''
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      errcode:
+                        type: string
+                      status:
+                        type: string
+                      info:
+                        type: string
+                    required:
+                      - errcode
+                      - status
+                      - info
+                  data:
+                    type: object
+                    properties: {}
+                  signature:
+                    type: string
+                  meta:
+                    type: object
+                    properties:
+                      txncode:
+                        type: string
+                      ver:
+                        type: string
+                      ts:
+                        type: string
+                    required:
+                      - txncode
+                      - ver
+                      - ts
+                  hmac:
+                    type: string
+                  publickey:
+                    type: string
+                  sig-algo:
+                    type: string
+                required:
+                  - result
+                  - data
+                  - signature
+                  - meta
+                  - hmac
+                  - publickey
+                  - sig-algo
+              example: >-
+                {"result":{"errcode":"E058","status":"failed","info":"Invalid
+                provider
+                code"},"data":{},"signature":"MGUCMQCn5HbV0ORQJ9M4qyX0AexFgzx7om9FUtXohzyLmFEzZgc6/veK9r5PnhAM8jsYD9ACMFsQYka8dYypNGpNrDnGvu3JHb50Dz13VLgEi2QnLcJsJ3zZLwbcQNKlgtpcntzxHw==","meta":{"txncode":"Rakhi123","ver":"1.0","ts":"2025-07-31T16:48:03+0530"},"hmac":"WKljGvYklRgU3reW7KNmUGa2W55zRF/8b/bnw/JWYo4=","publickey":"MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEKulxpinET1WoqVhiCpEQCNQQBtMRgVvjnvxfTINwr1ST7s+KoJuEp/ciPAnYZHZ5soGMZtLBZRRhEJnvvhlXClUiojiwLnpE0jxBhrLO+5wwUTRLFHLpsoA45/p5B0Hz","sig-algo":"SHA256withECDSA"}
+          headers: {}
+      security:
+        - bearer: []
+  /qa/kwikid/facematch/1.0/en:
+    post:
+      summary: Facematch
+      deprecated: false
+      description: ''
+      tags: []
+      parameters:
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          example: application/json
+          schema:
+            type: string
+        - name: provider
+          in: header
+          description: ''
+          required: true
+          example: '132'
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          description: ''
+          required: false
+          example: Q3BMaVZoel9FZ0VGQkF4eGFKZkh6aXVYZ01vYQ==
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: ''
+          required: false
+          example: Basic YWRtaW46cGFzcw==
+          schema:
+            type: string
+        - name: x-kwikid-key
+          in: header
+          description: ''
+          required: true
+          example: '323309374506270722'
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    txncode:
+                      type: string
+                    ts:
+                      type: string
+                  required:
+                    - ver
+                    - txncode
+                    - ts
+                data:
+                  type: object
+                  properties:
+                    uniqueId:
+                      type: string
+                    image1Base64:
+                      type: string
+                    image2Base64:
+                      type: string
+                  required:
+                    - uniqueId
+                    - image1Base64
+                    - image2Base64
+                hmac:
+                  type: string
+              required:
+                - meta
+                - data
+                - hmac
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      errcode:
+                        type: string
+                      status:
+                        type: string
+                      info:
+                        type: string
+                    required:
+                      - errcode
+                      - status
+                      - info
+                  data:
+                    type: object
+                    properties:
+                      confidence_score:
+                        type: number
+                      credits_consumed:
+                        type: integer
+                      facematch_result:
+                        type: string
+                      uniqueId:
+                        type: string
+                    required:
+                      - confidence_score
+                      - credits_consumed
+                      - facematch_result
+                      - uniqueId
+                  signature:
+                    type: string
+                  meta:
+                    type: object
+                    properties:
+                      txncode:
+                        type: string
+                      ver:
+                        type: string
+                      ts:
+                        type: string
+                    required:
+                      - txncode
+                      - ver
+                      - ts
+                  hmac:
+                    type: string
+                  publickey:
+                    type: string
+                  sig-algo:
+                    type: string
+                required:
+                  - result
+                  - data
+                  - signature
+                  - meta
+                  - hmac
+                  - publickey
+                  - sig-algo
+              example:
+                result:
+                  errcode: E000
+                  status: success
+                  info: ''
+                data:
+                  confidence_score: 0.6
+                  credits_consumed: 2
+                  facematch_result: 'False'
+                  uniqueId: '123456'
+                signature: >-
+                  MGUCMQDs/omzfflfeitBDh06XcyodtZpuFolyD8BJEW/AIxZktmjvKHTOZm9y6Fj7GWSabECMClLO6fSEh5FB3yLFg88nBsMj/W5egncPNfjmc1ZOwORPlSnopz8oGoWnyWIT5yqZw==
+                meta:
+                  txncode: whwh18272324
+                  ver: '1.0'
+                  ts: 2025-07-31T16:48:24+0530
+                hmac: Tt4isAsjC4ctKYoGF/O683oJSDxtunxBB1Xagx+/OPo=
+                publickey: >-
+                  MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEKulxpinET1WoqVhiCpEQCNQQBtMRgVvjnvxfTINwr1ST7s+KoJuEp/ciPAnYZHZ5soGMZtLBZRRhEJnvvhlXClUiojiwLnpE0jxBhrLO+5wwUTRLFHLpsoA45/p5B0Hz
+                sig-algo: SHA256withECDSA
+          headers: {}
+        x-200:Error:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      errcode:
+                        type: string
+                      status:
+                        type: string
+                      info:
+                        type: string
+                    required:
+                      - errcode
+                      - status
+                      - info
+                  data:
+                    type: object
+                    properties: {}
+                  signature:
+                    type: string
+                  meta:
+                    type: object
+                    properties:
+                      txncode:
+                        type: string
+                      ver:
+                        type: string
+                      ts:
+                        type: string
+                    required:
+                      - txncode
+                      - ver
+                      - ts
+                  hmac:
+                    type: string
+                  publickey:
+                    type: string
+                  sig-algo:
+                    type: string
+                required:
+                  - result
+                  - data
+                  - signature
+                  - meta
+                  - hmac
+                  - publickey
+                  - sig-algo
+              example:
+                result:
+                  errcode: E045
+                  status: failed
+                  info: Missing mandatory header parameter
+                data: {}
+                signature: >-
+                  MGUCMQCn5HbV0ORQJ9M4qyX0AexFgzx7om9FUtXohzyLmFEzZgc6/veK9r5PnhAM8jsYD9ACMFsQYka8dYypNGpNrDnGvu3JHb50Dz13VLgEi2QnLcJsJ3zZLwbcQNKlgtpcntzxHw==
+                meta:
+                  txncode: whwh18272324
+                  ver: '1.0'
+                  ts: 2025-07-31T16:48:54+0530
+                hmac: WKljGvYklRgU3reW7KNmUGa2W55zRF/8b/bnw/JWYo4=
+                publickey: >-
+                  MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEKulxpinET1WoqVhiCpEQCNQQBtMRgVvjnvxfTINwr1ST7s+KoJuEp/ciPAnYZHZ5soGMZtLBZRRhEJnvvhlXClUiojiwLnpE0jxBhrLO+5wwUTRLFHLpsoA45/p5B0Hz
+                sig-algo: SHA256withECDSA
+          headers: {}
+      security:
+        - bearer: []
+components:
+  schemas: {}
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+servers: []
+security: []

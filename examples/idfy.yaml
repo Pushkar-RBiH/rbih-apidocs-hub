@@ -1,0 +1,332 @@
+openapi: 3.0.1
+info:
+  title: IDfy - QA
+  description: ''
+  version: 1.0.0
+tags: []
+paths:
+  /:
+    post:
+      summary: Reverse Geocode
+      deprecated: false
+      description: ''
+      tags: []
+      parameters:
+        - name: api-key
+          in: header
+          description: ''
+          required: true
+          example: kartik_test
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          description: ''
+          required: true
+          example: '{{Client_id}}'
+          schema:
+            type: string
+        - name: provider
+          in: header
+          description: ''
+          required: true
+          example: '{{IDFY_SP}}'
+          schema:
+            type: string
+        - name: x-env-route
+          in: header
+          description: ''
+          required: false
+          example: /sb
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: ''
+          required: true
+          example: >-
+            Bearer
+            eyJ4NXQiOiJNR1JqTWpSaVlqVTBNVEpqWVRsaU1tSmpNMlUxT0RWbU56UmxOamN4WkRZeFptWXlNRFUwWWciLCJraWQiOiJOVFJoT0RkallqazNNR1UzTldGaU9EYzBaREppTmpsbE9URmtPVGt6TkRBME1tSXpNV1l4TkdNd05qazFaak5pTWpsaU4yTTFOMlpoTnpOalkyTTJPQV9SUzI1NiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJLYXJ0aWtlLkFudWoiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJuYmYiOjE3MTg4NjQ5MTEsImF6cCI6Imc5SjllTEFwVGJTdE9hNDFlNngxdzMxT05Ob2EiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvaWRlbnRpdHkubm9ucHJvZC5yYmlodWIuaW9cL29hdXRoMlwvdG9rZW4iLCJleHAiOjE3MTg5MDgxMTEsImlhdCI6MTcxODg2NDkxMSwianRpIjoiMGMxY2YyMzktZjk4Zi00MDRjLThiMzYtYWU5ZmU3YjU2YjM1In0.EsX0B20hKoJWRFqIOoHJBpGkvq7Au19ldxAK9eDuQqOneW8TvgaPEU9eCtFJNnnytHDIR2qxej_p7W2n4LWepJz_iEriKwVyfobjqZdp6hflpmF1Ltb5zdDStEiJqRXlNqtXag3BGPqjuWmi-yeBXk_taxB3S_XGrkH2FHdwk_KvvFbyLlUU0pUF5jkEWQ3YGPQ8tpihGrPl2KzttVSuxKhJbnQ8bbfccBpyVvMm9M1-lmqhGGFVuxc2KCjQM3HPz3ECNRQ_dKCPCzK5LDdXryxxggOc3kpy8dQOfvHEqb67Aeqh5ZDtekgh_y6I5YPn-SDIWNDBO749kWOvQ7lCjA
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          example: application/json
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    ts:
+                      type: string
+                    txncode:
+                      type: string
+                  required:
+                    - ver
+                    - ts
+                    - txncode
+                hmac:
+                  type: string
+                data:
+                  type: object
+                  properties:
+                    latitude:
+                      type: string
+                    longitude:
+                      type: string
+                  required:
+                    - latitude
+                    - longitude
+              required:
+                - meta
+                - hmac
+                - data
+            example: "{\r\n    \"meta\": {\r\n        \"ver\": \"1.0\",\r\n        \"ts\": \"{{currentdate}}\",\r\n        \"txncode\": \"ere\"\r\n    },\r\n    \"hmac\": \"mUljGvYklRgU3reW7KNmUGa2W55zRF/8b/bnw/JWYo4=\",\r\n    \"data\": {\r\n        \"latitude\": \"18.221074\",\r\n        \"longitude\": \"74.1604170000001\"\r\n    }//28.5983° N, 83.9310° E\r\n    //12°58′44″N 77°35′30″E12°58′44″N 77°35′30″E\r\n}"
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      errcode:
+                        type: string
+                      status:
+                        type: string
+                      info:
+                        type: string
+                    required:
+                      - errcode
+                      - status
+                      - info
+                  data:
+                    type: object
+                    properties:
+                      result:
+                        type: object
+                        properties:
+                          source_output:
+                            type: object
+                            properties:
+                              formatted_address:
+                                type: object
+                                properties:
+                                  country:
+                                    type: string
+                                  town:
+                                    type: 'null'
+                                  city:
+                                    type: 'null'
+                                  hamlet:
+                                    type: 'null'
+                                  municipality:
+                                    type: 'null'
+                                  postcode:
+                                    type: string
+                                  house_number:
+                                    type: 'null'
+                                  country_code:
+                                    type: string
+                                  road:
+                                    type: string
+                                  state_district:
+                                    type: string
+                                  neighbourhood:
+                                    type: 'null'
+                                  name:
+                                    type: 'null'
+                                  suburb:
+                                    type: 'null'
+                                  state:
+                                    type: string
+                                  city_district:
+                                    type: 'null'
+                                  region:
+                                    type: 'null'
+                                  state_code:
+                                    type: 'null'
+                                  village:
+                                    type: 'null'
+                                required:
+                                  - country
+                                  - town
+                                  - city
+                                  - hamlet
+                                  - municipality
+                                  - postcode
+                                  - house_number
+                                  - country_code
+                                  - road
+                                  - state_district
+                                  - neighbourhood
+                                  - name
+                                  - suburb
+                                  - state
+                                  - city_district
+                                  - region
+                                  - state_code
+                                  - village
+                              address:
+                                type: string
+                              bounding_box:
+                                type: array
+                                items:
+                                  type: string
+                              latitude:
+                                type: string
+                              longitude:
+                                type: string
+                              status:
+                                type: string
+                            required:
+                              - formatted_address
+                              - address
+                              - bounding_box
+                              - latitude
+                              - longitude
+                              - status
+                        required:
+                          - source_output
+                      completed_at:
+                        type: string
+                      group_id:
+                        type: string
+                      action:
+                        type: string
+                      created_at:
+                        type: string
+                      task_id:
+                        type: string
+                      type:
+                        type: string
+                      request_id:
+                        type: string
+                      status:
+                        type: string
+                    required:
+                      - result
+                      - completed_at
+                      - group_id
+                      - action
+                      - created_at
+                      - task_id
+                      - type
+                      - request_id
+                      - status
+                  signature:
+                    type: string
+                  meta:
+                    type: object
+                    properties:
+                      txncode:
+                        type: string
+                      ver:
+                        type: string
+                      ts:
+                        type: string
+                    required:
+                      - txncode
+                      - ver
+                      - ts
+                  hmac:
+                    type: string
+                  publickey:
+                    type: string
+                  sig-algo:
+                    type: string
+                required:
+                  - result
+                  - data
+                  - signature
+                  - meta
+                  - hmac
+                  - publickey
+                  - sig-algo
+              example:
+                result:
+                  errcode: E000
+                  status: success
+                  info: ''
+                data:
+                  result:
+                    source_output:
+                      formatted_address:
+                        country: India
+                        town: null
+                        city: null
+                        hamlet: null
+                        municipality: null
+                        postcode: '412305'
+                        house_number: null
+                        country_code: in
+                        road: Pune - Pandharpur Road
+                        state_district: Pune District
+                        neighbourhood: null
+                        name: null
+                        suburb: null
+                        state: Maharashtra
+                        city_district: null
+                        region: null
+                        state_code: null
+                        village: null
+                      address: >-
+                        Pune - Pandharpur Road, Purandhar, Pune District,
+                        Maharashtra, 412305, India
+                      bounding_box:
+                        - '18.2120044'
+                        - '18.2345963'
+                        - '74.1617009'
+                        - '74.1694568'
+                      latitude: '18.219955867312198'
+                      longitude: '74.1642907158957'
+                      status: location_found
+                  completed_at: '2025-06-03T09:49:50+05:30'
+                  group_id: 1d1ec264-38ec-4072-93c3-dd727e6d0032
+                  action: generate
+                  created_at: '2025-06-03T09:49:50+05:30'
+                  task_id: b2b4f5a9-13f3-4125-b02b-9ce7b0f51e6f
+                  type: reverse_geocode
+                  request_id: 12a0a676-a67c-4b84-91a7-e35d106b08e0
+                  status: completed
+                signature: >-
+                  MGUCMFjWBRIjzjRpqt/BD6kxtF5QK6x9bBfUo9Pz4qaT/0XfhIgcseGNP655gRXQ00pj9QIxALvA00uYRcGgoCmvjYXWNN8ASEfJV0P9yLq4MYxyxm2F099ucp4Wi6574eO/frcaYw==
+                meta:
+                  txncode: ere
+                  ver: '1.0'
+                  ts: 2025-06-03T09:49:50+0530
+                hmac: SCEwTlgkVXBgy7Pl5rBIL9wuqNCbEG3KNAuupjXfx1Q=
+                publickey: >-
+                  MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAE54T6/Oxs4ePvAgK/zT0oqVIzQRouLDatuPsOwA2HHQwcYOyhE3v140lHrbzNCvH6RB9lU4LIDsjAAN4HAMIPvslfMtqN8CzuzSmCta+bp9XIngS8rR0yIwsdpbt1eRrQ
+                sig-algo: SHA256withECDSA
+          headers: {}
+      security:
+        - bearer: []
+components:
+  schemas: {}
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+servers: []
+security: []

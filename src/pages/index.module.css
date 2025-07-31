@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  opacity: 0.2; /* slightly faded, tweak as needed */
+  opacity: 0.5; /* slightly faded, tweak as needed */
   pointer-events: none;
 }
 
@@ -55,17 +55,23 @@
   position: relative;
   z-index: 2;
 
-  /* 🔁 Use theme-aware CSS variables */
-  background-color: var(--ifm-background-color);
-  color: var(--ifm-font-color);
+  /* ✅ Use a subtle translucent purple background */
+  background-color: rgba(157, 178, 255, 0.15); /* Soft lavender background */
+  color: var(--ifm-font-color); /* Theme-aware text */
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 3rem 2rem;
   margin: 2rem auto;
   max-width: 600px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* lighter shadow for better contrast in light mode */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+
+.hero__title {
+  color: #9DB2FF !important;
+}
+
+
 
 
 /* ✅ Make buttons match purple theme */

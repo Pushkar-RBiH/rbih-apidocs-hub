@@ -77,13 +77,13 @@ const config: Config = {
         id: "api", // plugin id
         docsPluginId: "classic", // configured for preset-classic
         config: {
-          petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
+          // petstore: {
+          //   specPath: "examples/petstore.yaml",
+          //   outputDir: "docs/petstore",
+          //   sidebarOptions: {
+          //     groupPathsBy: "tag",
+          //   },
+          // } satisfies OpenApiPlugin.Options,
           farmermilkinsights: {
             specPath: "examples/farmer-milk-insights.yaml",
             outputDir: "docs/Farmer-Milk-Insights",

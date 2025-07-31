@@ -1,0 +1,166 @@
+openapi: 3.0.1
+info:
+  title: postman api rbih
+  description: ''
+  version: 1.0.0
+tags: []
+paths:
+  /farmyieldreport/1.5/en:
+    get:
+      summary: New Request
+      deprecated: false
+      description: ''
+      tags: []
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          example: application/json
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          description: ''
+          required: true
+          example: MDRtbTVpREhrZHpGbHZGalpXOGZ6Q2QwU1g0YQ==
+          schema:
+            type: string
+        - name: surveynum
+          in: header
+          description: ''
+          required: true
+          example: '103'
+          schema:
+            type: string
+        - name: txncode
+          in: header
+          description: ''
+          required: true
+          example: Parth-RBIH
+          schema:
+            type: string
+        - name: provider
+          in: header
+          description: ''
+          required: true
+          example: '104'
+          schema:
+            type: string
+        - name: ts
+          in: header
+          description: ''
+          required: true
+          example: '{{currentdate}}'
+          schema:
+            type: string
+        - name: statelrc
+          in: header
+          description: ''
+          required: true
+          example: '29'
+          schema:
+            type: string
+        - name: vilglrc
+          in: header
+          description: ''
+          required: true
+          example: '598748'
+          schema:
+            type: string
+        - name: x-sp-memberId
+          in: header
+          description: ''
+          required: true
+          example: ParthPushk
+          schema:
+            type: string
+        - name: activityid
+          in: header
+          description: ''
+          required: true
+          example: hellosososd
+          schema:
+            type: string
+        - name: khewatnumber
+          in: header
+          description: ''
+          required: true
+          example: ''
+          schema:
+            type: string
+        - name: murubbanumber
+          in: header
+          description: ''
+          required: true
+          example: ''
+          schema:
+            type: string
+        - name: surnoc
+          in: header
+          description: ''
+          required: true
+          example: '*'
+          schema:
+            type: string
+        - name: khatiyannum
+          in: header
+          description: ''
+          required: true
+          example: ''
+          schema:
+            type: string
+        - name: hissanumber
+          in: header
+          description: ''
+          required: true
+          example: '3'
+          schema:
+            type: string
+        - name: khatanum
+          in: header
+          description: ''
+          required: true
+          example: ''
+          schema:
+            type: string
+        - name: khasara
+          in: header
+          description: ''
+          required: true
+          example: ''
+          schema:
+            type: string
+        - name: subdivnum
+          in: header
+          description: ''
+          required: true
+          example: ''
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: ''
+          required: true
+          example: Basic YWRtaW46cGFzcw==
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
+      security:
+        - basic: []
+components:
+  schemas: {}
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+servers: []
+security: []
