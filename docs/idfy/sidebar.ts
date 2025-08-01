@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "idfy/idfy-qa",
+      id: "Idfy/idfy-qa",
     },
     {
       type: "category",
@@ -12,7 +12,7 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "idfy/reverse-geocode",
+          id: "Idfy/reverse-geocode",
           label: "Reverse Geocode",
           className: "api-method post",
         },

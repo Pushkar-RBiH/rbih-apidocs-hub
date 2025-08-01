@@ -8,25 +8,25 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "masterdata/Rajasthan/get-districts",
+          id: "Masterdata/Rajasthan/get-districts",
           label: "Get Districts",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "masterdata/Rajasthan/get-khasra-list",
+          id: "Masterdata/Rajasthan/get-khasra-list",
           label: "Get Khasra List",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "masterdata/Rajasthan/get-subdistricts",
+          id: "Masterdata/Rajasthan/get-subdistricts",
           label: "Get Subdistricts",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "masterdata/Rajasthan/get-villages",
+          id: "Masterdata/Rajasthan/get-villages",
           label: "Get Villages",
           className: "api-method get",
         },

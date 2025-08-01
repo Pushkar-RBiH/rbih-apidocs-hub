@@ -116,7 +116,7 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
           LRS: {
             specPath: "multiple_states/LRS",
-            outputDir: "docs/lrs",
+            outputDir: "docs/LRS",
             hideSendButton:true,
             sidebarOptions: {
               groupPathsBy: "tag",
@@ -124,7 +124,7 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
           IDFY: {
             specPath: "examples/idfy.yaml",
-            outputDir: "docs/idfy",
+            outputDir: "docs/Idfy",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
@@ -153,7 +153,23 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
           Masterdata_Rajasthan: {
             specPath: "multiple_states/masterdata/Rajasthan",
-            outputDir: "docs/masterdata/Rajasthan",
+            outputDir: "docs/Masterdata/Rajasthan",
+            hideSendButton: true,
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          Masterdata_TN: {
+            specPath: "multiple_states/masterdata/TamilNadu",
+            outputDir: "docs/Masterdata/Tamil Nadu",
+            hideSendButton: true,
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          DGV: {
+            specPath: "examples/dgv.yaml",
+            outputDir: "docs/DGV",
             hideSendButton: true,
             sidebarOptions: {
               groupPathsBy: "tag",
