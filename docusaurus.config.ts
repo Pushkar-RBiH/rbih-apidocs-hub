@@ -167,9 +167,25 @@ const config: Config = {
               groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
+          Masterdata_UP: {
+            specPath: "multiple_states/masterdata/UttarPradesh",
+            outputDir: "docs/Masterdata/Uttar Pradesh",
+            hideSendButton: true,
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
           DGV: {
             specPath: "examples/dgv.yaml",
             outputDir: "docs/DGV",
+            hideSendButton: true,
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          LenderLoanJourney: {
+            specPath: "examples/LenderLoanJourney/",
+            outputDir: "docs/Lender Loan Journey",
             hideSendButton: true,
             sidebarOptions: {
               groupPathsBy: "tag",
