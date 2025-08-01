@@ -1,0 +1,461 @@
+openapi: 3.0.1
+info:
+  title: DIGIO-KYC
+  description: ''
+  version: 1.0.0
+tags: []
+paths:
+  /qa/digio/verify/id-card/1.0/en:
+    post:
+      summary: Fetch ID data Voter ID
+      deprecated: false
+      description: ''
+      tags: []
+      parameters:
+        - name: content-type
+          in: header
+          description: ''
+          required: true
+          example: application/json
+          schema:
+            type: string
+        - name: api-key
+          in: header
+          description: ''
+          required: true
+          example: '616662'
+          schema:
+            type: string
+        - name: client-id
+          in: header
+          description: ''
+          required: true
+          example: '{{Client-id}}'
+          schema:
+            type: string
+        - name: provider
+          in: header
+          description: ''
+          required: true
+          example: '138'
+          schema:
+            type: string
+        - name: x-sp-authorization
+          in: header
+          description: >-
+            242526626262772,
+            QUNLMjUwNDIzMTk0MTI0NzA2N0xDQ040V0o0NjlZUVc6TEs4MUg3Q1dLNzlSWjVBS0Q0TkxTSlpDQjE4UkQ4Tjk=
+          required: true
+          example: >-
+            QUNLMjUwNDIzMTk0MTI0NzA2N0xDQ040V0o0NjlZUVc6TEs4MUg3Q1dLNzlSWjVBS0Q0TkxTSlpDQjE4UkQ4Tjk=
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          example: application/json
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meta:
+                  type: object
+                  properties:
+                    ver:
+                      type: string
+                    ts:
+                      type: string
+                    txncode:
+                      type: string
+                  required:
+                    - ver
+                    - ts
+                    - txncode
+                data:
+                  type: object
+                  properties:
+                    id_card_type:
+                      type: string
+                    id_no:
+                      type: string
+                    name:
+                      type: string
+                    dob:
+                      type: string
+                    file_no:
+                      type: string
+                    unique_request_id:
+                      type: string
+                  required:
+                    - id_card_type
+                    - id_no
+                    - name
+                    - dob
+                    - file_no
+                    - unique_request_id
+                hmac:
+                  type: string
+              required:
+                - meta
+                - data
+                - hmac
+            example:
+              meta:
+                ver: '1.0'
+                ts: '{{currentdate}}'
+                txncode: ABC1235
+              data:
+                id_card_type: VOTER_ID
+                id_no: YCV0164822
+                name: AVINASH KANCHAN
+                dob: ''
+                file_no: ''
+                unique_request_id: TEST0000001
+              hmac: 3kwYI1h6FQ6UHDZVA7FwUKyaOixBemSSdEwagbg2XY0=
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      errcode:
+                        type: string
+                      status:
+                        type: string
+                      info:
+                        type: string
+                    required:
+                      - errcode
+                      - status
+                      - info
+                  data:
+                    type: object
+                    properties:
+                      pc_name:
+                        type: string
+                      ps_name:
+                        type: string
+                      ps_name_v1:
+                        type: string
+                      st_code:
+                        type: string
+                      gender:
+                        type: string
+                      st_name:
+                        type: string
+                      dist_name:
+                        type: string
+                      rln_type:
+                        type: string
+                      rln_name_v1:
+                        type: string
+                      part_name_v1:
+                        type: string
+                      name_v1:
+                        type: string
+                      ac_name_v1:
+                        type: string
+                      epic_no:
+                        type: string
+                      part_no:
+                        type: string
+                      dist_name_v1:
+                        type: string
+                      ac_name:
+                        type: string
+                      pc_no:
+                        type: string
+                      name:
+                        type: string
+                      details:
+                        type: object
+                        properties:
+                          applicantFirstNameL1:
+                            type: string
+                          applicantLastName:
+                            type: string
+                          modifiedDttm:
+                            type: string
+                          partLatLong:
+                            type: string
+                          relationLName:
+                            type: string
+                          partId:
+                            type: integer
+                          stateId:
+                            type: integer
+                          applicantFirstName:
+                            type: string
+                          isActive:
+                            type: boolean
+                          sectionNo:
+                            type: integer
+                          partSerialNumber:
+                            type: integer
+                          acId:
+                            type: integer
+                          stateNameL1:
+                            type: string
+                          epicId:
+                            type: integer
+                          relationName:
+                            type: string
+                          createdDttm:
+                            type: string
+                          districtCd:
+                            type: string
+                          relationNameL1:
+                            type: string
+                          relationLNameL1:
+                            type: string
+                          id:
+                            type: string
+                          applicantLastNameL1:
+                            type: string
+                          epicDatetime:
+                            type: string
+                        required:
+                          - applicantFirstNameL1
+                          - applicantLastName
+                          - modifiedDttm
+                          - partLatLong
+                          - relationLName
+                          - partId
+                          - stateId
+                          - applicantFirstName
+                          - isActive
+                          - sectionNo
+                          - partSerialNumber
+                          - acId
+                          - stateNameL1
+                          - epicId
+                          - relationName
+                          - createdDttm
+                          - districtCd
+                          - relationNameL1
+                          - relationLNameL1
+                          - id
+                          - applicantLastNameL1
+                          - epicDatetime
+                      ac_no:
+                        type: integer
+                      rln_name:
+                        type: string
+                      dist_no:
+                        type: integer
+                      age:
+                        type: integer
+                      part_name:
+                        type: string
+                    required:
+                      - pc_name
+                      - ps_name
+                      - ps_name_v1
+                      - st_code
+                      - gender
+                      - st_name
+                      - dist_name
+                      - rln_type
+                      - rln_name_v1
+                      - part_name_v1
+                      - name_v1
+                      - ac_name_v1
+                      - epic_no
+                      - part_no
+                      - dist_name_v1
+                      - ac_name
+                      - pc_no
+                      - name
+                      - details
+                      - ac_no
+                      - rln_name
+                      - dist_no
+                      - age
+                      - part_name
+                  signature:
+                    type: string
+                  meta:
+                    type: object
+                    properties:
+                      txncode:
+                        type: string
+                      ver:
+                        type: string
+                      ts:
+                        type: string
+                    required:
+                      - txncode
+                      - ver
+                      - ts
+                  hmac:
+                    type: string
+                  publickey:
+                    type: string
+                  sig-algo:
+                    type: string
+                required:
+                  - result
+                  - data
+                  - signature
+                  - meta
+                  - hmac
+                  - publickey
+                  - sig-algo
+              example:
+                result:
+                  errcode: E000
+                  status: success
+                  info: ''
+                data:
+                  pc_name: Chennai North
+                  ps_name: >-
+                    Chennai Girls Higher Secondary School No, 5 School Road,
+                    Perambur, Chennai-600011.
+                  ps_name_v1: >-
+                    சென்னை பெண்கள் மேல்நிலைப்பள்ளி எண்-5 பள்ளி சாலை பெரம்பூர்
+                    சென்னை- 600011.
+                  st_code: S22
+                  gender: M
+                  st_name: Tamil Nadu
+                  dist_name: Chennai
+                  rln_type: FTHR
+                  rln_name_v1: சண்முகம் -
+                  part_name_v1: >-
+                    சென்னை பெண்கள் மேல்நிலைப்பள்ளி எண்-5 பள்ளி சாலை பெரம்பூர்
+                    சென்னை- 600011.
+                  name_v1: லோகநாதன் -
+                  ac_name_v1: திரு.வி.க.நகர்
+                  epic_no: YCV0164822
+                  part_no: '12'
+                  dist_name_v1: சென்னை
+                  ac_name: Thiru-Vi-Ka-Nagar
+                  pc_no: '2'
+                  name: loganathan -
+                  details:
+                    applicantFirstNameL1: லோகநாதன்
+                    applicantLastName: '-'
+                    modifiedDttm: '2025-04-24 12:00:00'
+                    partLatLong: 13.09284,80.19665
+                    relationLName: '-'
+                    partId: 136006
+                    stateId: 21
+                    applicantFirstName: Loganathan
+                    isActive: true
+                    sectionNo: 2
+                    partSerialNumber: 851
+                    acId: 7
+                    stateNameL1: तमिलनाडु
+                    epicId: 69195167
+                    relationName: kanapalli
+                    createdDttm: '2023-04-05 19:19:07'
+                    districtCd: S2202
+                    relationNameL1: சண்முகம்
+                    relationLNameL1: '-'
+                    id: 69195167_YCV0164822_S22
+                    applicantLastNameL1: '-'
+                    epicDatetime: '2025-04-24T20:55:14.881+00:00'
+                  ac_no: 15
+                  rln_name: kanapalli -
+                  dist_no: 2
+                  age: 71
+                  part_name: >-
+                    Chennai Girls Higher Secondary School No, 5 School Road,
+                    Perambur, Chennai-600011.
+                signature: >-
+                  MGUCMGGSoFP3WJjYK4kJsOtur1LPQkkU4tfd5afuUg0fkYKQF8usA88wfOkgtHFTmMFS/gIxAPai+9er3GcQ0vhmAJHwtEJkZGt/A0NyReJyZCCDgEr1nQo/knE5eXe0OK0dxo4NGQ==
+                meta:
+                  txncode: ABC1235
+                  ver: '1.0'
+                  ts: 2025-08-01T10:51:50+0530
+                hmac: pXYB/oI7gmls0psrtbaXu6EWcZCsH78IrUVC1CGxwyc=
+                publickey: >-
+                  MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEKulxpinET1WoqVhiCpEQCNQQBtMRgVvjnvxfTINwr1ST7s+KoJuEp/ciPAnYZHZ5soGMZtLBZRRhEJnvvhlXClUiojiwLnpE0jxBhrLO+5wwUTRLFHLpsoA45/p5B0Hz
+                sig-algo: SHA256withECDSA
+          headers: {}
+        x-200:failure:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      errcode:
+                        type: string
+                      status:
+                        type: string
+                      info:
+                        type: string
+                    required:
+                      - errcode
+                      - status
+                      - info
+                  data:
+                    type: object
+                    properties: {}
+                  signature:
+                    type: string
+                  meta:
+                    type: object
+                    properties:
+                      txncode:
+                        type: string
+                      ver:
+                        type: string
+                      ts:
+                        type: string
+                    required:
+                      - txncode
+                      - ver
+                      - ts
+                  hmac:
+                    type: string
+                  publickey:
+                    type: string
+                  sig-algo:
+                    type: string
+                required:
+                  - result
+                  - data
+                  - signature
+                  - meta
+                  - hmac
+                  - publickey
+                  - sig-algo
+              example:
+                result:
+                  errcode: EDI010
+                  status: failed
+                  info: >-
+                    Must be one of
+                    PAN,VOTER_ID,AADHAAR,PASSPORT,DRIVING_LICENSE,VEHICLE_RC,GST,IFSC
+                data: {}
+                signature: >-
+                  MGQCMG81FZok28EVDLTJX0n65IqFdX/bPOTx4BLA99/7z8Y/0yuee233jKnBBM+S3ySJtAIwLKb/ZCHwehKhNtgmGcwoCaXj9wIdkgfZTj9v3xR7NoaIw2TGwgcS7zWHf6DfNaf7
+                meta:
+                  txncode: ''
+                  ver: '1.0'
+                  ts: 2025-08-01T10:53:52+0530
+                hmac: WKljGvYklRgU3reW7KNmUGa2W55zRF/8b/bnw/JWYo4=
+                publickey: >-
+                  MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEKulxpinET1WoqVhiCpEQCNQQBtMRgVvjnvxfTINwr1ST7s+KoJuEp/ciPAnYZHZ5soGMZtLBZRRhEJnvvhlXClUiojiwLnpE0jxBhrLO+5wwUTRLFHLpsoA45/p5B0Hz
+                sig-algo: SHA256withECDSA
+          headers: {}
+      security: []
+components:
+  schemas: {}
+  securitySchemes: {}
+servers: []
+security: []

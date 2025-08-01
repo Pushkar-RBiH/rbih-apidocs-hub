@@ -144,6 +144,21 @@ const config: Config = {
               groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
+          Digio: {
+            specPath: "examples/digio.yaml",
+            outputDir: "docs/digio",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          Masterdata_Rajasthan: {
+            specPath: "multiple_states/masterdata/Rajasthan",
+            outputDir: "docs/masterdata/Rajasthan",
+            hideSendButton: true,
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
         }
       },
     ]
